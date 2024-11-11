@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Slats</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="calculadora">
+            <img src="gallara.png" alt="Isologo Gallará" class="isologo">
+            <h1>Calculadora de Slats</h1>
+            
+            <!-- Información de entrada del usuario -->
+            <div class="input-group">
+                <label for="tipoPlaca">Tipo de placa:</label>
+                <select id="tipoPlaca">
+                    <option value="SSHD200">SSHD200 (2m x 0.33m)</option>
+                    <option value="SSHD250">SSHD250 (2.5m x 0.5m)</option>
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <label for="anchoRecinto">Ancho del recinto (m):</label>
+                <input type="number" id="anchoRecinto" min="0" step="0.01">
+            </div>
+            
+            <div class="input-group">
+                <label for="largoRecinto">Largo del recinto (m):</label>
+                <input type="number" id="largoRecinto" min="0" step="0.01">
+            </div>
+
+            <!-- Botón calcular -->
+            <div class="button-container">
+                <button onclick="calcularPlacas()" class="calculate-btn">Calcular</button>
+            </div>
+
+            <!-- Resultados -->
+            <div id="resultado"></div>
+        </div>
+
+        <div class="esquema">
+            <canvas id="esquemaCanvas" width="500" height="500"></canvas>
+            <div id="leyenda">
+                <p><strong>Tipo de placa:</strong> <span id="tipoPlacaSeleccionado">SSHD200</span></p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
